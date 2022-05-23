@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>PU_PsionicShock</defName>
+        <label>Neural Shock</label>
+        <description>Deep psychic destabilization of the mind caused by the presence of malformed psychic constructs. Neural Shock typically manifests when an attempt at psychic reshaping fails, leaving any psychic constructs used in the reshaping process malformed. Thankfully, almost all forms of such malformed constructs will self-destruct in time, meaning almost all forms of Neural Shock will dissipate within a day's time.</description>
+        <isBad>true</isBad>
+        <comps Inherit="False">
+        <li Class="HediffCompProperties_SeverityPerDay">
+            <severityPerDay>-1.0</severityPerDay>
+            <showDaysToRecover>true</showDaysToRecover>
+        </li>
+        <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+        <stages>
+            <li>
+                <label>fading</label>
+                <capMods>
+                <li>
+                    <capacity>Consciousness</capacity>
+                        <postFactor>0.95</postFactor>
+                </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.1</minSeverity>
+                <label>waning</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.2</minSeverity>
+                <label>slight</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>minor</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.7</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>moderate</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.6</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.5</minSeverity>
+                <label>major</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>severe</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.4</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.7</minSeverity>
+                <label>extreme</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.3</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>catastophic</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.2</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>total</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ################################################ PAINBLOCK ############################################### -->
+    <!-- ########################################################################################################## -->
+
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Painblock_II</defName>
+        <label>advanced psychic anesthesia I</label>
+        <description>Psychically-induced pain insensitivity.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <painFactor>0.075</painFactor>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicAnesthesia</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Painblock_III</defName>
+        <label>advanced psychic anesthesia II</label>
+        <description>Psychically-induced pain insensitivity.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <painFactor>0.05</painFactor>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicAnesthesia</li>
+                    <li>PU_Psycast_Painblock_II</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Painblock_IV</defName>
+        <label>advanced psychic anesthesia III</label>
+        <description>Psychically-induced pain insensitivity.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <painFactor>0.025</painFactor>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicAnesthesia</li>
+                    <li>PU_Psycast_Painblock_II</li>
+                    <li>PU_Psycast_Painblock_III</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Painblock_V</defName>
+        <label>advanced psychic anesthesia IV</label>
+        <description>Psychically-induced pain immunity.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <painFactor>0</painFactor>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicAnesthesia</li>
+                    <li>PU_Psycast_Painblock_II</li>
+                    <li>PU_Psycast_Painblock_III</li>
+                    <li>PU_Psycast_Painblock_IV</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Painblock_VI</defName>
+        <label>advanced psychic anesthesia V</label>
+        <description>Psychically-induced pain immunity.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <painFactor>0</painFactor>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicAnesthesia</li>
+                    <li>PU_Psycast_Painblock_II</li>
+                    <li>PU_Psycast_Painblock_III</li>
+                    <li>PU_Psycast_Painblock_IV</li>
+                    <li>PU_Psycast_Painblock_V</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ################################################# BURDEN ################################################# -->
+    <!-- ########################################################################################################## -->
+
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Burden_II</defName>
+        <label>advanced psychic burden I</label>
+        <description>Psychically-induced difficulty in locomotion.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Moving</capacity>
+                <setMax>0.36</setMax>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBurden</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Burden_III</defName>
+        <label>advanced psychic burden II</label>
+        <description>Psychically-induced difficulty in locomotion.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Moving</capacity>
+                <setMax>0.32</setMax>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBurden</li>
+                    <li>PU_Psycast_Burden_II</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Burden_IV</defName>
+        <label>advanced psychic burden III</label>
+        <description>Psychically-induced difficulty in locomotion.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Moving</capacity>
+                <setMax>0.28</setMax>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBurden</li>
+                    <li>PU_Psycast_Burden_II</li>
+                    <li>PU_Psycast_Burden_III</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Burden_V</defName>
+        <label>advanced psychic burden IV</label>
+        <description>Psychically-induced difficulty in locomotion.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Moving</capacity>
+                <setMax>0.24</setMax>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBurden</li>
+                    <li>PU_Psycast_Burden_II</li>
+                    <li>PU_Psycast_Burden_III</li>
+                    <li>PU_Psycast_Burden_IV</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_Psycast_Burden_VI</defName>
+        <label>advanced psychic burden V</label>
+        <description>Psychically-induced difficulty in locomotion.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Moving</capacity>
+                <setMax>0.2</setMax>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBurden</li>
+                    <li>PU_Psycast_Burden_II</li>
+                    <li>PU_Psycast_Burden_III</li>
+                    <li>PU_Psycast_Burden_IV</li>
+                    <li>PU_Psycast_Burden_V</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ############################################# BLINDING PULSE ############################################# -->
+    <!-- ########################################################################################################## -->
+
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicBlindness_II</defName>
+        <label>advanced psychic blindness I</label>
+        <description>Psychically-induced partial blindness.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>0.45</postFactor>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBlindness</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicBlindness_III</defName>
+        <label>advanced psychic blindness II</label>
+        <description>Psychically-induced partial blindness.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>0.4</postFactor>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBlindness</li>
+                    <li>PU_PsychicBlindness_II</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicBlindness_IV</defName>
+        <label>advanced psychic blindness III</label>
+        <description>Psychically-induced partial blindness.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>0.35</postFactor>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBlindness</li>
+                    <li>PU_PsychicBlindness_II</li>
+                    <li>PU_PsychicBlindness_III</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicBlindness_V</defName>
+        <label>advanced psychic blindness IV</label>
+        <description>Psychically-induced partial blindness.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>0.3</postFactor>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBlindness</li>
+                    <li>PU_PsychicBlindness_II</li>
+                    <li>PU_PsychicBlindness_III</li>
+                    <li>PU_PsychicBlindness_IV</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicBlindness_VI</defName>
+        <label>advanced psychic blindness V</label>
+        <description>Psychically-induced partial blindness.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>0.25</postFactor>
+            </li>
+            </capMods>
+            <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicBlindness</li>
+                    <li>PU_PsychicBlindness_II</li>
+                    <li>PU_PsychicBlindness_III</li>
+                    <li>PU_PsychicBlindness_IV</li>
+                    <li>PU_PsychicBlindness_V</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ############################################# VERTIGO PULSE ############################################## -->
+    <!-- ########################################################################################################## -->
+
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicVertigo_II</defName>
+        <label>advanced psychic vertigo I</label>
+        <description>Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <vomitMtbDays>0.00005787</vomitMtbDays>
+        </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disorientation">
+                <wanderMtbHours>0.05</wanderMtbHours>
+                <singleWanderDurationTicks>225</singleWanderDurationTicks>
+                <wanderRadius>3</wanderRadius>
+            </li>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicVertigo</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicVertigo_III</defName>
+        <label>advanced psychic vertigo II</label>
+        <description>Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <vomitMtbDays>0.00005787</vomitMtbDays>
+        </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disorientation">
+                <wanderMtbHours>0.05</wanderMtbHours>
+                <singleWanderDurationTicks>270</singleWanderDurationTicks>
+                <wanderRadius>3</wanderRadius>
+            </li>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicVertigo</li>
+                    <li>PU_PsychicVertigo_II</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicVertigo_IV</defName>
+        <label>advanced psychic vertigo III</label>
+        <description>Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <vomitMtbDays>0.00005787</vomitMtbDays>
+        </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disorientation">
+                <wanderMtbHours>0.05</wanderMtbHours>
+                <singleWanderDurationTicks>315</singleWanderDurationTicks>
+                <wanderRadius>3</wanderRadius>
+            </li>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicVertigo</li>
+                    <li>PU_PsychicVertigo_II</li>
+                    <li>PU_PsychicVertigo_III</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicVertigo_V</defName>
+        <label>advanced psychic vertigo IV</label>
+        <description>Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <vomitMtbDays>0.00005787</vomitMtbDays>
+        </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disorientation">
+                <wanderMtbHours>0.05</wanderMtbHours>
+                <singleWanderDurationTicks>360</singleWanderDurationTicks>
+                <wanderRadius>3</wanderRadius>
+            </li>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicVertigo</li>
+                    <li>PU_PsychicVertigo_II</li>
+                    <li>PU_PsychicVertigo_III</li>
+                    <li>PU_PsychicVertigo_IV</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicVertigo_VI</defName>
+        <label>advanced psychic vertigo V</label>
+        <description>Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.</description>
+        <isBad>true</isBad>
+        <stages>
+        <li>
+            <vomitMtbDays>0.00005787</vomitMtbDays>
+        </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disorientation">
+                <wanderMtbHours>0.05</wanderMtbHours>
+                <singleWanderDurationTicks>540</singleWanderDurationTicks>
+                <wanderRadius>3</wanderRadius>
+            </li>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicVertigo</li>
+                    <li>PU_PsychicVertigo_II</li>
+                    <li>PU_PsychicVertigo_III</li>
+                    <li>PU_PsychicVertigo_IV</li>
+                    <li>PU_PsychicVertigo_V</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ############################################# PSYCHIC FOCUS ############################################## -->
+    <!-- ########################################################################################################## -->
+
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicFocus_II</defName>
+        <label>advanced psychic focus I</label>
+        <description>Psychically-induced mental focus, increasing sight, hearing and movement capactities.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>1.6</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>1.6</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>1.6</postFactor>
+            </li>
+            </capMods>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicFocus</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicFocus_III</defName>
+        <label>advanced psychic focus II</label>
+        <description>Psychically-induced mental focus, increasing sight, hearing and movement capactities.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>2</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>2</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>2</postFactor>
+            </li>
+            </capMods>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicFocus</li>
+                    <li>PU_PsychicFocus_II</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicFocus_IV</defName>
+        <label>advanced psychic focus III</label>
+        <description>Psychically-induced mental focus, increasing sight, hearing and movement capactities.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>2.3</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>2.3</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>2.3</postFactor>
+            </li>
+            </capMods>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicFocus</li>
+                    <li>PU_PsychicFocus_II</li>
+                    <li>PU_PsychicFocus_III</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicFocus_V</defName>
+        <label>advanced psychic focus IV</label>
+        <description>Psychically-induced mental focus, increasing sight, hearing and movement capactities.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>2.6</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>2.6</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>2.6</postFactor>
+            </li>
+            </capMods>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicFocus</li>
+                    <li>PU_PsychicFocus_II</li>
+                    <li>PU_PsychicFocus_III</li>
+                    <li>PU_PsychicFocus_IV</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName = "PsycastHediffBase">
+        <defName>PU_PsychicFocus_VI</defName>
+        <label>advanced psychic focus V</label>
+        <description>Psychically-induced mental focus, increasing sight, hearing and movement capactities.</description>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+            <capMods>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>4</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>4</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>4</postFactor>
+            </li>
+            </capMods>
+        </li>
+        </stages>
+        <comps>
+            <li Class="IHaveTheCure.HediffCompProperties_CuresHediffs"> <!-- Instantly removes effects belonging to lower levels of psycast. -->
+                <hediffsToCure>
+                    <li>PsychicFocus</li>
+                    <li>PU_PsychicFocus_II</li>
+                    <li>PU_PsychicFocus_III</li>
+                    <li>PU_PsychicFocus_IV</li>
+                    <li>PU_PsychicFocus_V</li>
+                </hediffsToCure>
+            </li>
+        </comps>
+    </HediffDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

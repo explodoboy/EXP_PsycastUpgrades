@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Skip having two upgrade paths exists just to show that multiple upgrade paths ARE allowed for a single Psycast. -->
+
+	<!-- 
+
+                            UPGRADE TEMPLATE
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>DEFNAME</ability>
+                        <upgradeCost>UPGRADECOST_INTEGER</upgradeCost>
+                        <upgradeTime>UPGRADETIME_IN_TICKS</upgradeTime>
+                        <refundAmountIfInterrupted>REFUNDAMOUNT_INTEGER</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>SEVERITY_HERE_FLOAT_0_TO_1</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>DEFNAME</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+
+                    
+                            LEVEL 2-3 UPGRADE
+                        <ability>PU_ABILITYHERE_III</ability>
+                        <upgradeCost>2</upgradeCost>
+                        <upgradeTime>5000</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.4</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_II</prerequisiteTechnology>
+                        
+                            LEVEL 3-4 UPGRADE
+                        <ability>PU_ABILITYHERE_IV</ability>
+                        <upgradeCost>4</upgradeCost>
+                        <upgradeTime>10000</upgradeTime>
+                        <refundAmountIfInterrupted>2</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.6</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_III</prerequisiteTechnology>
+                        
+                            LEVEL 4-5 UPGRADE
+                        <ability>PU_ABILITYHERE_V</ability>
+                        <upgradeCost>7</upgradeCost>
+                        <upgradeTime>30000</upgradeTime>
+                        <refundAmountIfInterrupted>4</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.8</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_IV</prerequisiteTechnology>
+                        
+                            LEVEL 5-6 (PERFECTED) UPGRADE
+                        <ability>PU_ABILITYHERE_VI</ability>
+                        <upgradeCost>10</upgradeCost>
+                        <upgradeTime>60000</upgradeTime>
+                        <refundAmountIfInterrupted>6</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>1</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_V</prerequisiteTechnology>
+
+
+                        LEVEL 1:
+                        +25% to Primary Effects, Duration
+                        -10% to Neural Heat, Psyfocus Cost
+
+                        LEVEL 2:
+                        +50% to Primary Effects, Duration
+                        -15% to Neural Heat, Psyfocus Cost
+
+                        LEVEL 3:
+                        +75% to Primary Effects, Duration
+                        -20% to Neural Heat, Psyfocus Cost
+
+                        LEVEL 4:
+                        +100% to Primary Effects, Duration
+                        -25% to Neural Heat, Psyfocus Cost
+
+                        LEVEL 5:
+                        +200% to Primary Effects, Duration
+                        -50% to Neural Heat, Psyfocus Cost
+
+
+
+
+                        CHAIN-SKIP: -15%/-30%/-45%/-60%/-80% | Neural Heat, Windup
+    -->
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ############################################### HIGH-SKIP ################################################ -->
+    <!-- ########################################################################################################## -->
+
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_HighSkip_I</defName>
+        <label>high-skip I</label>
+        <description>Teleport the target to a desired position not too far from his starting point.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>23</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.23</warmupTime>
+        <range>34.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>34.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>16~54</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_HighSkip_II</ability>
+                        <upgradeCost>2</upgradeCost>
+                        <upgradeTime>5000</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.4</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_II</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_HighSkip_II</defName>
+        <label>high-skip II</label>
+        <description>Teleport the target to a desired position not too far from his starting point.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>21</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.21</warmupTime>
+        <range>41.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>41.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>15~51</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_HighSkip_III</ability>
+                        <upgradeCost>4</upgradeCost>
+                        <upgradeTime>10000</upgradeTime>
+                        <refundAmountIfInterrupted>2</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.6</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_III</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_HighSkip_III</defName>
+        <label>high-skip III</label>
+        <description>Teleport the target to a desired position not too far from his starting point.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>20</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.20</warmupTime>
+        <range>48.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>48.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>14~48</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_HighSkip_IV</ability>
+                        <upgradeCost>7</upgradeCost>
+                        <upgradeTime>30000</upgradeTime>
+                        <refundAmountIfInterrupted>4</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.8</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_IV</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_HighSkip_IV</defName>
+        <label>high-skip IV</label>
+        <description>Teleport the target to a desired position not too far from his starting point.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>19</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.19</warmupTime>
+        <range>55.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>55.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>13~45</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_HighSkip_V</ability>
+                        <upgradeCost>10</upgradeCost>
+                        <upgradeTime>60000</upgradeTime>
+                        <refundAmountIfInterrupted>6</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>1</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_V</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_HighSkip_V</defName>
+        <label>high-skip V</label>
+        <description>Teleport the target to a desired position not too far from his starting point.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>13</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.13</warmupTime>
+        <range>83.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>83.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>9~30</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+
+    <!-- ########################################################################################################## -->
+    <!-- ############################################## CHAIN-SKIP ################################################ -->
+    <!-- ########################################################################################################## -->
+
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_ChainSkip_I</defName>
+        <label>chain-skip I</label>
+        <description>Teleport the target to a desired position not too far from his starting point.\n\nThis variant of Skip puts significantly less strain on the caster, with a reduced neural heat generation and warmup time compared to an equivilant level of high-skip.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>21</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.21</warmupTime>
+        <range>27.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>27.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>15~51</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_ChainSkip_II</ability>
+                        <upgradeCost>2</upgradeCost>
+                        <upgradeTime>5000</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.4</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_II</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_ChainSkip_II</defName>
+        <label>chain-skip II</label>
+        <description>Teleport the target to a desired position not too far from his starting point.\n\nThis variant of Skip puts significantly less strain on the caster, with a reduced neural heat generation and warmup time compared to an equivilant level of high-skip.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>18</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.18</warmupTime>
+        <range>27.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>27.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>13~42</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_ChainSkip_III</ability>
+                        <upgradeCost>4</upgradeCost>
+                        <upgradeTime>10000</upgradeTime>
+                        <refundAmountIfInterrupted>2</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.6</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_III</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_ChainSkip_III</defName>
+        <label>chain-skip III</label>
+        <description>Teleport the target to a desired position not too far from his starting point.\n\nThis variant of Skip puts significantly less strain on the caster, with a reduced neural heat generation, warmup time, and psyfocus cost compared to an equivilant level of high-skip.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>14</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.14</warmupTime>
+        <range>27.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>27.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>10~33</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_ChainSkip_IV</ability>
+                        <upgradeCost>7</upgradeCost>
+                        <upgradeTime>30000</upgradeTime>
+                        <refundAmountIfInterrupted>4</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.8</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_IV</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_ChainSkip_IV</defName>
+        <label>chain-skip IV</label>
+        <description>Teleport the target to a desired position not too far from his starting point.\n\nThis variant of Skip puts significantly less strain on the caster, with a reduced neural heat generation, warmup time, and psyfocus cost compared to an equivilant level of high-skip.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>10</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.1</warmupTime>
+        <range>27.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>27.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>7~24</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+                <upgradesTo>
+                    <li>
+                        <ability>PU_ChainSkip_V</ability>
+                        <upgradeCost>10</upgradeCost>
+                        <upgradeTime>60000</upgradeTime>
+                        <refundAmountIfInterrupted>6</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>1</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_V</prerequisiteTechnology>
+                    </li>
+                </upgradesTo>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>PU_ChainSkip_V</defName>
+        <label>chain-skip V</label>
+        <description>Teleport the target to a desired position not too far from his starting point.\n\nThis variant of Skip puts significantly less strain on the caster, with a reduced neural heat generation and warmup time compared to an equivilant level of high-skip, alongside no Psyfocus cost.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>False</showPsycastEffects>
+        <hotKey>Misc9</hotKey>
+        <statBases>
+        <Ability_EntropyGain>5</Ability_EntropyGain>
+        <Ability_PsyfocusCost>0.00</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+        <warmupTime>0.05</warmupTime>
+        <range>27.9</range>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+            <canTargetItems>True</canTargetItems>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityTeleport">
+            <compClass>CompAbilityEffect_Teleport</compClass>
+            <destination>Selected</destination>
+            <requiresLineOfSight>True</requiresLineOfSight>
+            <range>27.9</range>
+            <clamorType>Ability</clamorType>
+            <clamorRadius>10</clamorRadius>
+            <destClamorType>Ability</destClamorType>
+            <destClamorRadius>10</destClamorRadius>
+            <stunTicks>4~12</stunTicks>
+            <goodwillImpact>-15</goodwillImpact>
+            <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+        </li>
+        </comps>
+        <modExtensions>
+            <li Class="PsycastUpgradeFramework.PsycastExtension">
+                <upgradeOnly>true</upgradeOnly>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+
+
+
+
+
+
+
+
+
+
+  
+</Defs>

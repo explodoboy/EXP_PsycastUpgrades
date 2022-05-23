@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+    <ResearchTabDef>
+        <defName>PsycastUpgrades</defName>
+        <label>Psycast Upgrades</label>
+    </ResearchTabDef>
+
+	<ResearchProjectDef>
+		<defName>PU_Research_I</defName>
+		<label>Psycast Upgrades I</label>
+		<description>Unlocks upgrading psycasts up to Tier 2.</description>
+		<tab>PsycastUpgrades</tab>
+		<baseCost>3000</baseCost>
+		<techLevel>Ultra</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+    
+	<ResearchProjectDef>
+		<defName>PU_Research_II</defName>
+		<label>Psycast Upgrades II</label>
+		<description>Unlocks upgrading psycasts to Tier 3.</description>
+		<tab>PsycastUpgrades</tab>
+		<baseCost>6000</baseCost>
+		<techLevel>Ultra</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+		<prerequisites>
+			<li>PU_Research_I</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+    
+	<ResearchProjectDef>
+		<defName>PU_Research_III</defName>
+		<label>Psycast Upgrades III</label>
+		<description>Unlocks upgrading psycasts to Tier 4.</description>
+		<tab>PsycastUpgrades</tab>
+		<baseCost>9000</baseCost>
+		<techLevel>Ultra</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+		<prerequisites>
+			<li>PU_Research_II</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+    
+	<ResearchProjectDef>
+		<defName>PU_Research_IV</defName>
+		<label>Psycast Upgrades IV</label>
+		<description>Unlocks upgrading psycasts to Tier 5.</description>
+		<tab>PsycastUpgrades</tab>
+		<baseCost>12000</baseCost>
+		<techLevel>Ultra</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+		<prerequisites>
+			<li>PU_Research_III</li>
+		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+    
+	<ResearchProjectDef>
+		<defName>PU_Research_V</defName>
+		<label>Psycast Upgrades V</label>
+		<description>Unlocks upgrading psycasts to Tier Ω.</description>
+		<tab>PsycastUpgrades</tab>
+		<baseCost>15000</baseCost>
+		<techLevel>Ultra</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+		<prerequisites>
+			<li>PU_Research_IV</li>
+		</prerequisites>
+		<researchViewX>5</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

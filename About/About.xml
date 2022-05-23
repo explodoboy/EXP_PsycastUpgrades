@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Psycast Upgrades</name>
+	<author>explodoboy</author>
+	<supportedVersions>
+	    <li>1.3</li>
+	</supportedVersions>
+	<packageId>explodoboy.PsycastUpgrades</packageId>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+        </li>
+        <li>
+            <packageId>UnlimitedHugs.HugsLib</packageId>
+            <displayName>HugsLib</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/818773962</steamWorkshopUrl>
+            <downloadUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</downloadUrl>
+        </li>
+        <li>
+            <packageId>explodoboy.PsycastUpgradeFramework</packageId>
+            <displayName>Psycast Upgrade Framework</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2805881475</steamWorkshopUrl>
+            <!--downloadUrl>https://github.com/GITHUB_LINK_HERE</downloadUrl-->
+        </li>
+        <li>
+            <packageId>explodoboy.HediffCureFramework</packageId>
+            <displayName>I Have The Cure! [Framework]</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2672103801</steamWorkshopUrl>
+            <!--downloadUrl>https://github.com/GITHUB_LINK_HERE</downloadUrl-->
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>brrainz.harmony</li>
+        <li>UnlimitedHugs.HugsLib</li>
+        <li>explodoboy.PsycastUpgradeFramework</li>
+        <li>explodoboy.HediffCureFramework</li> <!-- Depends on I HAVE THE CURE! to prevent different levels of psycast from stacking with one-another. -->
+    </loadAfter>
+	<description>Psycast Upgrades adds several upgrades for existing vanilla psycasts. Psycasts are unlocked via the 'Psychic Reshaper' building, which is unlocked by the 'Psychic Reshaping' technology. Each vanilla psycast gets 5 upgrades of increasing power and expensiveness.</description>
+</ModMetaData>

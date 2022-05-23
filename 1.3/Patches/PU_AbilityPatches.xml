@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- NOTE FOR MODDERS:
+            <inflictHediffOnInterrupt> is NOT required. I just have it in all of these to be consistent and to show the functionality. 
+            
+            Also, the minimum you need for the <upgradesTo> tag is to have an <ability> tag. Psychic Upgrade Framework defaults to free, instant, and techless upgrades, that inflict no penalties on failure.
+
+            Finally, if you screw up an <upgradesTo> tag, the entire mod will break the psycast upgrader building, providing a red error when you try to interact with it, so make sure everything you put in the <upgradesTo> tag is valid!
+    -->
+
+	<!-- 
+                            LEVEL 1 >> 2 UPGRADE
+                        <ability>PU_ABILITYHERE_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+    -->
+
+    <!-- TEMPLATE START
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="REPLACEME"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PUF__I_I</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>DEFNAME</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+    
+    TEMPLATE END -->
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Painblock"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Painblock_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Stun"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Stun_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Burden"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Burden_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="BlindingPulse"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_BlindingPulse_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="EntropyDump"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_EntropyDump_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Beckon"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Beckon_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="VertigoPulse"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_VertigoPulse_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="ChaosSkip"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_ChaosSkip_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Skip"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_HighSkip_I</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+					<li>
+						<ability>PU_ChainSkip_I</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Wallraise"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Wallraise_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Smokepop"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Smokepop_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Focus"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Focus_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Berserk"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Berserk_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Invisibility"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Invisibility_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="BerserkPulse"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_BerserkPulse_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="ManhunterPulse"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_ManhunterPulse_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="MassChaosSkip"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_MassChaosSkip_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Waterskip"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Waterskip_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Flashstorm"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Flashstorm_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="BulletShield"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_BulletShield_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="SolarPinhole"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_SolarPinhole_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="WordOfTrust"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_WordOfTrust_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="WordOfJoy"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_WordOfJoy_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="WordOfLove"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_WordOfLove_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="WordOfSerenity"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_WordOfSerenity_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="WordOfInspiration"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_WordOfInspiration_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Farskip"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Farskip_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Neuroquake"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Neuroquake_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/AbilityDef[defName="Chunkskip"]</xpath>
+		<value>
+			<li Class="PsycastUpgradeFramework.PsycastExtension">
+				<upgradesTo>
+					<li>
+						<ability>PU_Chunkskip_II</ability>
+                        <upgradeCost>1</upgradeCost>
+                        <upgradeTime>2500</upgradeTime>
+                        <refundAmountIfInterrupted>1</refundAmountIfInterrupted>
+                        <inflictHediffOnInterrupt>
+                            <hediff>PU_PsionicShock</hediff>
+                            <severity>0.2</severity>
+                        </inflictHediffOnInterrupt>
+                        <prerequisiteTechnology>PU_Research_I</prerequisiteTechnology>
+					</li>
+				</upgradesTo>
+			</li>
+		</value>
+	</Operation>
+	
+</Patch>
+
